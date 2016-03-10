@@ -1,10 +1,13 @@
 VOWELS = ['a','e','i','o','u']
 
 def translate(str)
-  words = str.downcase.split
+  words = str.split
   result = []
   words.each do |word| 
-    result << translate_word(word)
+    punct = word.gsub(/\w/, '')
+    pig_word = translate_word(word.gsub(/\W/, '').downcase)
+    pig_word = word[0] == word[0].upcase ? pig_word.capitalize : pig_word
+    result << pig_word + punct.to_s
   end
   result.join(" ")
 end

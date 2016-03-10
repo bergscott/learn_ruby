@@ -67,6 +67,14 @@ describe "#translate" do
 
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
+  it "maintains capitalization of words" do
+    s = translate("Dancing with Wolves")
+    expect(s).to eq ("Ancingday ithway Olvesway")
+  end
   # * retain the punctuation from the original phrase
+  it "retains punctuation" do
+    s = translate("When running, run hard. Right?!")
+    expect(s).to eq("Enwhay unningray, unray ardhay. Ightray?!")
+  end
 
 end

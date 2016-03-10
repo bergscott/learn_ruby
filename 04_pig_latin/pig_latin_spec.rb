@@ -77,4 +77,9 @@ describe "#translate" do
     expect(s).to eq("Enwhay unningray, unray ardhay. Ightray?!")
   end
 
+  it "handles apostrophes" do
+    s = translate("That's all 'til again we sup' once more.")
+    expect(s).to eq("At'sthay allay 'iltay againay eway up'say onceay oremay.")
+  end
+
 end
